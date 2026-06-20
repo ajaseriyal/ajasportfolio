@@ -138,44 +138,6 @@ button { font: inherit; }
 .down-button:hover { transform: translateY(4px); }
 .scroll-cue small { font-size: 11px; }
 
-.hero-network {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  opacity: .9;
-}
-.hero-network svg { width: 100%; height: 100%; }
-.hero-network .edges line {
-  stroke-dasharray: 6 6;
-  animation: edge-flow 9s linear infinite;
-}
-.hero-network .edges line:nth-child(2n) { animation-duration: 13s; animation-direction: reverse; }
-.hero-network .edges line:nth-child(3n) { animation-duration: 17s; }
-.hero-network .node circle {
-  transform-origin: center;
-  transform-box: fill-box;
-  animation: node-pulse 4.2s ease-in-out infinite;
-}
-.hero-network .node text { pointer-events: none; }
-.hero-network .n2 circle { animation-delay: .4s; }
-.hero-network .n3 circle { animation-delay: .9s; }
-.hero-network .n4 circle { animation-delay: 1.3s; }
-.hero-network .n5 circle { animation-delay: 1.7s; }
-.hero-network .n6 circle { animation-delay: 2.1s; }
-.hero-network .n7 circle { animation-delay: 2.6s; }
-@keyframes edge-flow {
-  to { stroke-dashoffset: -120; }
-}
-@keyframes node-pulse {
-  0%, 100% { transform: scale(1); filter: drop-shadow(0 2px 6px rgba(0,0,0,.05)); }
-  50%      { transform: scale(1.1); filter: drop-shadow(0 4px 12px rgba(45,166,119,.28)); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero-network .edges line,
-  .hero-network .node circle { animation: none; }
-}
-
 .about-grid {
   display: grid;
   grid-template-columns: minmax(280px, .9fr) minmax(0, 1.1fr);
