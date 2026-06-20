@@ -180,18 +180,39 @@ button { font: inherit; }
 }
 .hero-btn.primary:hover { background: #000; border-color: #000; }
 
-.hero-monogram {
+.hero-marquee {
   position: absolute;
-  right: -2vw;
-  bottom: -3vw;
+  right: 0;
+  bottom: 6%;
   z-index: 1;
-  color: rgba(39, 39, 39, .04);
-  font-weight: 700;
-  font-size: clamp(180px, 28vw, 460px);
-  letter-spacing: -.075em;
-  line-height: .82;
-  user-select: none;
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent 0%, #000 18%, #000 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 18%, #000 100%);
   pointer-events: none;
+}
+.hero-marquee-track {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(20px, 2.4vw, 44px);
+  color: rgba(39, 39, 39, .065);
+  font-weight: 700;
+  font-size: clamp(80px, 14vw, 220px);
+  letter-spacing: -.055em;
+  line-height: .9;
+  white-space: nowrap;
+  animation: hero-marquee 28s linear infinite;
+}
+.hero-marquee-track i {
+  color: rgba(45, 166, 119, .25);
+  font-style: normal;
+  font-size: .65em;
+}
+@keyframes hero-marquee {
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-marquee-track { animation: none; }
 }
 .hero-glow {
   position: absolute;
