@@ -85,14 +85,14 @@ if (changingWord && !reduceMotion) {
   }, 2400);
 }
 
-const emailButton = document.querySelector('.email-button');
+const emailButton = document.querySelector('.email-button[aria-expanded]');
 emailButton?.addEventListener('click', () => {
   const expanded = emailButton.getAttribute('aria-expanded') === 'true';
   if (!expanded) {
     emailButton.setAttribute('aria-expanded', 'true');
-    emailButton.innerHTML = '<span>janblunar2@gmail.com</span><i>\u2197</i>';
+    emailButton.innerHTML = '<span>ajas@shiftt.online</span><i>\u2197</i>';
     emailButton.addEventListener('click', () => {
-      window.location.href = 'mailto:janblunar2@gmail.com';
+      window.location.href = 'mailto:ajas@shiftt.online';
     }, { once: true });
   }
 });
