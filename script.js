@@ -112,4 +112,23 @@ document.querySelectorAll('.case-card').forEach((card) => {
   });
 });
 
+// Recent Work — category filter
+const rwNavBtns = document.querySelectorAll('.rw-nav-btn');
+const rwCards = document.querySelectorAll('.rw-card');
+rwNavBtns.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const cat = btn.dataset.cat;
+    rwNavBtns.forEach((b) => {
+      const active = b === btn;
+      b.classList.toggle('is-active', active);
+      b.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+    rwCards.forEach((card) => {
+      const show = cat === 'all' || card.dataset.cat === cat;
+      card.classList.toggle('is-hidden', !show);
+    });
+  });
+});
+
+
 document.querySelector('#year').textContent = new Date().getFullYear();
