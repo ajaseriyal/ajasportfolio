@@ -115,6 +115,11 @@ document.querySelectorAll('.case-card').forEach((card) => {
 // Recent Work — category filter
 const rwNavBtns = document.querySelectorAll('.rw-nav-btn');
 const rwCards = document.querySelectorAll('.rw-card');
+function applyRwFilter(cat) {
+  rwCards.forEach((card) => {
+    card.classList.toggle('is-hidden', card.dataset.cat !== cat);
+  });
+}
 rwNavBtns.forEach((btn) => {
   btn.addEventListener('click', () => {
     const cat = btn.dataset.cat;
@@ -123,12 +128,11 @@ rwNavBtns.forEach((btn) => {
       b.classList.toggle('is-active', active);
       b.setAttribute('aria-selected', active ? 'true' : 'false');
     });
-    rwCards.forEach((card) => {
-      const show = cat === 'all' || card.dataset.cat === cat;
-      card.classList.toggle('is-hidden', !show);
-    });
+    applyRwFilter(cat);
   });
 });
+const rwInitial = document.querySelector('.rw-nav-btn.is-active');
+if (rwInitial) applyRwFilter(rwInitial.dataset.cat);
 
 
 document.querySelector('#year').textContent = new Date().getFullYear();
