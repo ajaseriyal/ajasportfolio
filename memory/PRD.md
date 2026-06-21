@@ -12,7 +12,7 @@
 ## Identity (current site)
 - Name: **Ajas**
 - Title: Digital & IT Consultant
-- Tagline: Digital × IT × Commerce
+- Tagline: Digital Marketing × IT Consultant
 - Experience: 3+ years
 - Email: ajas@shiftt.online
 - Phone: +971 50 694 9820
