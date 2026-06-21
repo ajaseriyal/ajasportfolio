@@ -668,12 +668,16 @@ h2, h3, p { text-wrap: pretty; }
   .rw-nav {
     position: static;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     overflow-x: auto;
+    overflow-y: hidden;
     gap: 6px;
     padding: 6px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
-  .rw-nav-btn { flex: 0 1 auto; gap: 8px; padding: 10px 14px; white-space: nowrap; }
+  .rw-nav::-webkit-scrollbar { display: none; }
+  .rw-nav-btn { flex: 0 0 auto; gap: 8px; padding: 10px 14px; white-space: nowrap; }
   .rw-nav-btn span { margin-left: 6px; }
   .rw-grid { grid-template-columns: repeat(2, 1fr); }
 }
