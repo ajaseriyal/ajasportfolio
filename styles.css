@@ -183,21 +183,19 @@ button { font: inherit; }
 .hero-icon-btn {
   position: relative;
   z-index: 2;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 13px 18px;
+  display: inline-grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
   border: 1px solid rgba(39, 39, 39, .16);
   border-radius: 14px;
   color: var(--ink);
-  font-size: 13px;
-  font-weight: 500;
   background: rgba(255, 255, 255, .6);
   transition: transform .25s ease, background .25s ease, border-color .25s ease, color .25s ease;
 }
-.hero-icon-btn svg { flex-shrink: 0; transition: transform .25s ease; }
+.hero-icon-btn svg { transition: transform .25s ease; }
 .hero-icon-btn:hover { transform: translateY(-2px); background: #fff; border-color: rgba(39, 39, 39, .32); }
-.hero-icon-btn:hover svg { transform: scale(1.06); }
+.hero-icon-btn:hover svg { transform: scale(1.08); }
 .hero-icon-btn.primary {
   color: #fff;
   background: var(--green);
